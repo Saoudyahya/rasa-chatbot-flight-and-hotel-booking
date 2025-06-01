@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وكالة السفر - مساعد ذكي</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-plane"></i>
+                    <h1>وكالة السفر الذكية</h1>
+                </div>
+                <div class="header-info">
+                    <span>مساعدك الشخصي لحجز الرحلات والفنادق</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Chat Container -->
+        <div class="chat-container">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <div class="bot-info">
+                    <div class="bot-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="bot-details">
+                        <h3>مساعد السفر</h3>
+                        <span class="status online">متصل</span>
+                    </div>
+                </div>
+                <div class="chat-actions">
+                    <button id="resetAll" class="btn-reset" title="إعادة تشغيل كاملة">
+                        <i class="fas fa-redo"></i>
+                    </button>
+                    <button id="clearChat" class="btn-clear" title="مسح الرسائل">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Messages Area -->
+            <div class="messages-container" id="messagesContainer">
+                <div class="message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <div class="message-text">
+                            مرحباً بك في وكالة السفر الذكية! 🌟<br>
+                            كيف يمكنني مساعدتك اليوم؟<br><br>
+                            يمكنني مساعدتك في:
+                            <ul>
+                                <li>✈️ حجز رحلات طيران</li>
+                                <li>🏨 حجز فنادق</li>
+                                <li>🎯 تخطيط رحلتك</li>
+                            </ul>
+                        </div>
+                        <div class="message-time" id="welcomeTime"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <button class="quick-btn" onclick="sendQuickMessage('أريد حجز رحلة طيران')">
+                    <i class="fas fa-plane"></i>
+                    حجز رحلة
+                </button>
+                <button class="quick-btn" onclick="sendQuickMessage('أريد حجز فندق')">
+                    <i class="fas fa-hotel"></i>
+                    حجز فندق
+                </button>
+                <button class="quick-btn" onclick="sendQuickMessage('الخيار الأول')">
+                    <i class="fas fa-check-circle"></i>
+                    الخيار الأول
+                </button>
+                <button class="quick-btn" onclick="sendQuickMessage('الخيار الثاني')">
+                    <i class="fas fa-check-circle"></i>
+                    الخيار الثاني
+                </button>
+                <button class="quick-btn" onclick="sendQuickMessage('أؤكد الحجز')">
+                    <i class="fas fa-thumbs-up"></i>
+                    تأكيد
+                </button>
+                <button class="quick-btn" onclick="sendQuickMessage('أريد تغيير الخيار')">
+                    <i class="fas fa-exchange-alt"></i>
+                    تغيير
+                </button>
+                <button class="quick-btn" onclick="sendQuickMessage('مساعدة')">
+                    <i class="fas fa-question-circle"></i>
+                    مساعدة
+                </button>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <input type="text" id="messageInput" placeholder="اكتب رسالتك هنا..." autocomplete="off">
+                    <button id="sendButton" class="send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="input-actions">
+                    <span class="typing-indicator" id="typingIndicator">
+                        <i class="fas fa-circle"></i>
+                        <i class="fas fa-circle"></i>
+                        <i class="fas fa-circle"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-spinner">
+                <i class="fas fa-plane"></i>
+                <span>جاري المعالجة...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Travel Background Elements -->
+    <div class="bg-elements">
+        <div class="bg-plane"><i class="fas fa-plane"></i></div>
+        <div class="bg-cloud"></div>
+        <div class="bg-cloud"></div>
+        <div class="bg-cloud"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
